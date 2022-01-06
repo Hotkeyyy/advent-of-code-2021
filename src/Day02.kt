@@ -5,6 +5,7 @@ fun main() {
 
     fun part1(input: List<String>): Int {
         var h = 0; var depth = 0
+
         input.forEach {
             val pair = stringToPair(it)
             when (pair.first) {
@@ -27,11 +28,9 @@ fun main() {
                     depth += (pair.second * aim)
                 }
                 "down" -> aim += pair.second
-
                 "up" -> aim -= pair.second
             }
         }
-
         return h * depth
     }
 
